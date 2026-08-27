@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Evaluate — xobehtedistuO Performing Arts</title>
+  <meta name="description" content="Submit a song or talent for ZephyrForge evaluation. HOLD / FIX THEN SEND / READY in 48 hours." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #0b0b0b;
+      --ink: #f3ebe0;
+      --muted: #9c9186;
+      --rose: #c17b6c;
+      --gold: #d4b56a;
+      --line: #2a2420;
+      --box: #14110f;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: radial-gradient(ellipse 80% 40% at 10% 0%, #3a1e18 0%, transparent 50%), var(--bg);
+      color: var(--ink);
+      font-family: Inter, system-ui, sans-serif;
+      min-height: 100vh;
+    }
+    a { color: var(--gold); text-decoration: none; }
+    header {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 20px 8vw; border-bottom: 1px solid var(--line);
+    }
+    .brand { display: flex; align-items: center; gap: 10px; font-size: 14px; letter-spacing: .06em; }
+    .xring {
+      width: 22px; height: 22px; border-radius: 50%; border: 1.5px solid var(--gold);
+      color: var(--gold); display: grid; place-items: center; font-size: 11px; font-weight: 600;
+    }
+    nav { display: flex; gap: 18px; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+    nav a { color: var(--muted); }
+    nav a:hover { color: var(--ink); }
+    main { max-width: 880px; margin: 0 auto; padding: 56px 24px 80px; }
+    .eyebrow { font-size: 12px; letter-spacing: .32em; text-transform: uppercase; color: var(--rose); margin-bottom: 12px; }
+    h1 { font-family: "Cormorant Garamond", serif; font-size: clamp(40px, 7vw, 64px); line-height: .95; font-weight: 600; }
+    .lede { margin: 16px 0 28px; color: var(--muted); font-size: 18px; max-width: 640px; line-height: 1.45; }
+    .stamps { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 36px; }
+    .stamp { border: 1px solid var(--line); padding: 6px 10px; font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+    .stamp.fix { border-color: var(--gold); color: var(--gold); }
+    .stamp.go { border-color: #6b8f71; color: #b7d4bb; }
+    .stamp.hold { border-color: var(--rose); color: #e0b0a6; }
+    form {
+      background: var(--box); border: 1px solid var(--line); padding: 28px;
+    }
+    .row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    label { display: block; font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: var(--rose); margin: 16px 0 6px; }
+    input, select, textarea {
+      width: 100%; background: #0e0c0b; border: 1px solid var(--line); color: var(--ink);
+      padding: 12px 12px; font: 15px Inter, sans-serif;
+    }
+    input:focus, select:focus, textarea:focus { outline: 1px solid var(--rose); }
+    textarea { min-height: 110px; resize: vertical; }
+    .full { grid-column: 1 / -1; }
+    .note { font-size: 13px; color: var(--muted); margin-top: 8px; line-height: 1.4; }
+    button {
+      margin-top: 22px; background: var(--rose); color: #1a100e; border: 0;
+      font-weight: 600; letter-spacing: .08em; text-transform: uppercase;
+      padding: 14px 22px; cursor: pointer; font-size: 13px;
+    }
+    button:hover { filter: brightness(1.06); }
+    .alt { margin-top: 14px; font-size: 13px; color: var(--muted); }
+    footer { padding: 24px 8vw 40px; color: var(--muted); font-size: 12px; border-top: 1px solid var(--line); }
+    .ok {
+      display: none; border: 1px solid #6b8f71; background: #12180f; padding: 20px; margin-bottom: 24px;
+    }
+    .ok.show { display: block; }
+    @media (max-width: 700px) {
+      .row { grid-template-columns: 1fr; }
+      nav { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand"><span class="xring">X</span> xobehtedistuO Performing Arts</div>
+    <nav>
+      <a href="https://xobehtedistuo-talent-agency.higgsfield.app/">Agency</a>
+      <a href="https://xobehtedistuo.com">Music Hub</a>
+      <a href="https://xobehtedistuo-talent-agency.higgsfield.app/standards">Standards</a>
+    </nav>
+  </header>
+  <main>
+    <div class="ok" id="sent">
+      Received. If this is a $39 audit, send payment after you get the confirmation reply. Stamp goes out inside 48 hours.
+    </div>
+    <div class="eyebrow">ZephyrForge gate · evaluate</div>
+    <h1>Sit the work<br>in front of the kitchen.</h1>
+    <p class="lede">Higgsfield’s evaluate route is down. This page is the working door. Song audit or talent intake — it lands in the house email, not a dead app form.</p>
+    <div class="stamps">
+      <span class="stamp hold">Hold</span>
+      <span class="stamp fix">Fix then send</span>
+      <span class="stamp go">Ready</span>
+      <span class="stamp">48 hours</span>
+      <span class="stamp">$39 song audit</span>
+    </div>
+
+    <form action="https://formsubmit.co/xobehtedistuotalent@gmail.com" method="POST">
+      <input type="hidden" name="_subject" value="EVALUATE — xobehtedistuO gate" />
+      <input type="hidden" name="_template" value="table" />
+      <input type="hidden" name="_captcha" value="false" />
+      <input type="hidden" name="_next" value="" id="next" />
+      <input type="text" name="_honey" style="display:none" />
+
+      <div class="row">
+        <div class="full">
+          <label for="job">What are we evaluating</label>
+          <select id="job" name="job_type" required>
+            <option value="">Select…</option>
+            <option value="Distribution Audit — $39">Distribution Audit — $39 · one song · 48 hrs</option>
+            <option value="Talent evaluation — roster">Talent evaluation — look / voice / range</option>
+            <option value="Both">Song + talent together</option>
+          </select>
+        </div>
+        <div>
+          <label for="name">Name</label>
+          <input id="name" name="name" required autocomplete="name" />
+        </div>
+        <div>
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" required autocomplete="email" />
+        </div>
+        <div>
+          <label for="artist">Artist / persona name</label>
+          <input id="artist" name="artist" />
+        </div>
+        <div>
+          <label for="lane">Lane / genre</label>
+          <input id="lane" name="lane" placeholder="R&B, emo, gospel rock, country…" />
+        </div>
+        <div class="full">
+          <label for="title">Track title (if a song)</label>
+          <input id="title" name="track_title" />
+        </div>
+        <div class="full">
+          <label for="link">Private link</label>
+          <input id="link" name="private_link" type="url" placeholder="https:// — Suno, Drive, unlisted, DistroKid preview" required />
+          <p class="note">Do not send a public “please stream this” URL if you can help it. Private or unlisted.</p>
+        </div>
+        <div class="full">
+          <label for="why">Why this, why now — one sentence</label>
+          <textarea id="why" name="why_now" required placeholder="Who it is for. What you want the stamp to decide."></textarea>
+        </div>
+        <div>
+          <label for="splits">Writer splits on paper?</label>
+          <select id="splits" name="splits_ready">
+            <option value="Not yet">Not yet</option>
+            <option value="Yes — documented">Yes — documented</option>
+            <option value="Solo writer">Solo writer</option>
+            <option value="N/A — talent only">N/A — talent only</option>
+          </select>
+        </div>
+        <div>
+          <label for="pay">Audit payment</label>
+          <select id="pay" name="payment_status">
+            <option value="Will pay $39 after you confirm">Will pay $39 after you confirm</option>
+            <option value="Already sent $39">Already sent $39</option>
+            <option value="Talent eval only — no audit fee">Talent eval only — no audit fee</option>
+          </select>
+        </div>
+      </div>
+      <button type="submit">Send to the kitchen</button>
+      <p class="alt">If a robot ever eats the form, write the same facts to <a href="mailto:xobehtedistuotalent@gmail.com?subject=EVALUATE">xobehtedistuotalent@gmail.com</a>.</p>
+    </form>
+  </main>
+  <footer>
+    No proof, no progression. Artist 80 / Label 20 on collected revenue if you take a table.
+    READY is not a chart promise. · xobehtedistuo.com
+  </footer>
+  <script>
+    document.getElementById("next").value = location.href.split("?")[0] + "?sent=1";
+    if (new URLSearchParams(location.search).get("sent") === "1") {
+      document.getElementById("sent").classList.add("show");
+    }
+  </script>
+</body>
+</html>
